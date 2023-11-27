@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  /* min-height:100vh */
+}
+#container{
+  width: 100vw;
+  height: 25vh;
+  margin:auto;
+  background-color: crimson;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+  transition: 300ms;
+  margin-block: 5vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+#container:has(.left:hover){
+  grid-template-columns: 3fr 1fr 1fr;
 }
+#container:has(.center:hover){
+  grid-template-columns: 1fr 3fr 1fr;
+}
+#container:has(.right:hover){
+  grid-template-columns: 1fr 1fr 3fr;
+}
+#container div{
+background-color: wheat;
+transition: 300ms;
+}
+#container :is(div:hover){
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: crimson;
 }
